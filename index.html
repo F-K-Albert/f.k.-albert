@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="F.K. Albert - Impact-driven entrepreneur building platforms that transform lives through financial education, Gospel truth, and strategic investments.">
+    <meta property="og:title" content="F.K. Albert - Impact-Driven Digital Entrepreneur">
+    <meta property="og:description" content="Founder of platforms transforming lives through financial education, Gospel truth, and strategic investments.">
+    <meta property="og:image" content="https://yourwebsite.com/images/albert-og.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>F.K. Albert - Impact-Driven Digital Entrepreneur</title>
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e67e22;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #1a252f;
+            --success: #27ae60;
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Lato', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-secondary);
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f9f9f9;
+        }
+        
+        [dir="rtl"] body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: var(--font-primary);
+            font-weight: 700;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--accent);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--secondary);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #d35400;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            margin: 15px auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: transform 0.4s, opacity 0.4s;
+            margin-top: 48px;
+        }
+
+        /* Hide header when at top of home section */
+        body.home-at-top header {
+            transform: translateY(-120%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        [dir="rtl"] nav ul {
+            padding-right: 0;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        [dir="rtl"] nav ul li {
+            margin-left: 0;
+            margin-right: 30px;
+        }
+        
+        nav ul li a {
+            position: relative;
+            padding-bottom: 5px;
+            z-index: 1;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+            z-index: 1;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* Ventures Section */
+        .ventures {
+            background-color: white;
+        }
+        
+        .ventures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .venture-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .venture-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .venture-img {
+            height: 200px;
+            background-color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+        
+        .venture-content {
+            padding: 25px;
+        }
+
+        .venture-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .venture-role {
+            display: inline-block;
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .venture-description {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .venture-platforms {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .platform-icon {
+            width: 30px;
+            height: 30px;
+            background-color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 0.8rem;
+        }
+        
+        .platform-icon:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light);
+        }
+        
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        [dir="rtl"] .about-container {
+            direction: ltr; /* Keep image on left even in RTL */
+        }
+        
+        .about-img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .about-content p {
+            margin-bottom: 15px;
+        }
+        
+        .about-quote {
+            background-color: white;
+            padding: 20px;
+            border-left: 4px solid var(--secondary);
+            margin-top: 30px;
+            font-style: italic;
+            position: relative;
+        }
+        
+        [dir="rtl"] .about-quote {
+            border-left: none;
+            border-right: 4px solid var(--secondary);
+        }
+        
+        .about-quote:before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            color: rgba(230, 126, 34, 0.2);
+            font-family: serif;
+        }
+        
+        [dir="rtl"] .about-quote:before {
+            left: auto;
+            right: 10px;
+        }
+        
+        /* Connect Section */
+        .connect {
+            background-color: white;
+        }
+        
+        .connect-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .connect-card {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .connect-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .connect-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .connect-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .connect-card p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: none; /* Hidden by default */
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Form error states */
+        .form-group.error .form-control {
+            border-color: #e74c3c;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.875rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .form-group.error .error-message {
+            display: block;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        [dir="rtl"] .footer-col h3:after {
+            left: auto;
+            right: 0;
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: white;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+        
+        [dir="rtl"] .footer-links a:hover {
+            padding-left: 0;
+            padding-right: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            z-index: 1100;
+            display: flex;
+            gap: 5px;
+            background: rgba(255,255,255,0.95);
+            padding: 6px 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .language-switcher.hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        [dir="rtl"] .language-switcher {
+            right: auto;
+            left: 20px;
+        }
+
+        .language-btn {
+            padding: 5px 10px;
+            background: transparent;
+            border: 2px solid var(--secondary);
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 32px;
+        }
+
+        .language-btn:hover {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .language-btn.active {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+        
+        /* Accessibility Improvements */
+        a:focus, button:focus, input:focus, textarea:focus {
+            outline: 2px solid var(--secondary);
+            outline-offset: 3px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--secondary);
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Lazy Loading Styles */
+        img[loading="lazy"] {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        img[loading="lazy"].loaded {
+            opacity: 1;
+        }
+
+        /* Success message */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: #27ae60;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-img {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px 0;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                transition: all 0.5s ease;
+                padding: 30px;
+                margin-top: 50px;
+            }
+            
+            [dir="rtl"] nav {
+                left: auto;
+                right: -100%;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            [dir="rtl"] nav.active {
+                left: auto;
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                margin-bottom: 10px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .language-switcher {
+                top: 15px;
+                right: 15px;
+                padding: 4px 6px;
+            }
+            
+            [dir="rtl"] .language-switcher {
+                right: auto;
+                left: 15px;
+            }
+            
+            header {
+                margin-top: 56px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Content Link -->
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="language-btn active" data-lang="en">EN</button>
+        <button class="language-btn" data-lang="es">ES</button>
+        <button class="language-btn" data-lang="fr">FR</button>
+        <button class="language-btn" data-lang="de">DE</button>
+        <button class="language-btn" data-lang="pt">PT</button>
+        <button class="language-btn" data-lang="it">IT</button>
+        <button class="language-btn" data-lang="zh">中文</button>
+        <button class="language-btn" data-lang="ar">العربية</button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#home" class="logo">F.K. <span>Albert</span></a>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home" data-i18n="home">Home</a></li>
+                    <li><a href="#ventures" data-i18n="ventures">Ventures</a></li>
+                    <li><a href="#about" data-i18n="about_me">About</a></li>
+                    <li><a href="#connect" data-i18n="connect_with_me">Connect</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 data-i18n="welcome">Impact Driven Serial Entrepreneur</h1>
+                    <p data-i18n="welcome_sub">Founder of platforms transforming lives through financial education, Gospel truth, and strategic investments across multiple industries.</p>
+                    <div class="hero-btns">
+                        <a href="#ventures" class="btn" data-i18n="explore_ventures">Explore My Ventures</a>
+                        <a href="#connect" class="btn btn-outline" data-i18n="connect_with_me">Connect With Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ventures Section -->
+        <section class="section ventures" id="ventures">
+            <div class="container">
+                <h2 class="section-title" data-i18n="my_ventures">My Ventures</h2>
+                <div class="ventures-grid">
+                    <!-- FinMastery -->
+                    <div class="venture-card">
+                        <div class="venture-img" style="background-color: #f1c40f; color: white;">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="venture-content">
+                            <h3>FinMastery</h3>
+                            <span class="venture-role" data-i18n="founder">Founder</span>
+                            <p class="venture-description" data-i18n="finmastery_desc">Financial literacy school dedicated to empowering individuals with practical money education and strategies for wealth creation.</p>
+                            <div class="venture-platforms">
+                                <a href="https://youtube.com/yourfinmastery" target="_blank" class="platform-icon"><i class="fab fa-youtube"></i></a>
+                                <a href="https://facebook.com/yourfinmastery" target="_blank" class="platform-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://instagram.com/yourfinmastery" target="_blank" class="platform-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="https://linkedin.com/company/yourfinmastery" target="_blank" class="platform-icon"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://finmastery.com" target="_blank" class="platform-icon"><i class="fas fa-globe"></i></a>
+                                <a href="https://play.google.com/store/apps/details?id=com.finmastery.app" target="_blank" class="platform-icon"><i class="fas fa-mobile-alt"></i></a>
+                            </div>
+                            <a href="https://finmastery.com" class="btn" data-i18n="visit_platform">Visit Platform</a>
+                        </div>
+                    </div>
+                    
+                    <!-- The Gospel Truths -->
+                    <div class="venture-card">
+                        <div class="venture-img" style="background-color: #9b59b6; color: white;">
+                            <i class="fas fa-bible"></i>
+                        </div>
+                        <div class="venture-content">
+                            <h3>The Gospel Truths</h3>
+                            <span class="venture-role" data-i18n="founder">Founder</span>
+                            <p class="venture-description" data-i18n="gospeltruths_desc">Digital platform that teaches the foundational truths of the Gospel of Christ to inspire spiritual growth and biblical understanding.</p>
+                            <div class="venture-platforms">
+                                <a href="https://www.youtube.com/@TheGospelTruth-h1l" target="_blank" class="platform-icon"><i class="fab fa-youtube"></i></a>
+                                <a href="https://facebook.com/yourgospeltruths" target="_blank" class="platform-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://instagram.com/yourgospeltruths" target="_blank" class="platform-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="https://gospeltruths.org" target="_blank" class="platform-icon"><i class="fas fa-globe"></i></a>
+                            </div>
+                            <a href="https://gospeltruths.org" class="btn" data-i18n="explore_teachings">Explore Teachings</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Ads Bego -->
+                    <div class="venture-card">
+                        <div class="venture-img" style="background-color: #3498db; color: white;">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <div class="venture-content">
+                            <h3>Ads Bego</h3>
+                            <span class="venture-role" data-i18n="founder">Founder</span>
+                            <p class="venture-description" data-i18n="adsbego_desc">Investment-focused platform that mobilizes capital for high-impact ventures, empowering individuals to grow their wealth.</p>
+                            <div class="venture-platforms">
+                                <a href="https://facebook.com/youradsbego" target="_blank" class="platform-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://instagram.com/youradsbego" target="_blank" class="platform-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="https://adsbego.com" target="_blank" class="platform-icon"><i class="fas fa-globe"></i></a>
+                            </div>
+                            <a href="https://adsbego.com/investments" class="btn" data-i18n="learn_investments">Learn About Investments</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Perus Group -->
+                    <div class="venture-card">
+                        <div class="venture-img" style="background-color: #e74c3c; color: white;">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="venture-content">
+                            <h3>Perus Group</h3>
+                            <span class="venture-role" data-i18n="founder">Founder</span>
+                            <p class="venture-description" data-i18n="perus_desc">Cross-sector holding company driving innovation in real estate, agriculture, logistics, tech, and finance across Ghana and Spain.</p>
+                            <div class="venture-platforms">
+                                <a href="https://facebook.com/yourperusgroup" target="_blank" class="platform-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://instagram.com/yourperusgroup" target="_blank" class="platform-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="https://perusgroup.com" target="_blank" class="platform-icon"><i class="fas fa-globe"></i></a>
+                            </div>
+                            <a href="https://perusgroup.com" class="btn" data-i18n="discover_perus">Discover Perus</a>
+                        </div>
+                    </div>
+                    
+                    <!-- PIT Fund -->
+                    <div class="venture-card">
+                        <div class="venture-img" style="background-color: #2ecc71; color: white;">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div class="venture-content">
+                            <h3>PIT Fund</h3>
+                            <span class="venture-role" data-i18n="founder">Founder</span>
+                            <p class="venture-description" data-i18n="pitfund_desc">Private investment trust that raises capital for curated, profitable ventures offering equity opportunities to strategic partners.</p>
+                            <div class="venture-platforms">
+                                <a href="https://facebook.com/yourpitfund" target="_blank" class="platform-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://instagram.com/yourpitfund" target="_blank" class="platform-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="https://pitfund.com" target="_blank" class="platform-icon"><i class="fas fa-globe"></i></a>
+                            </div>
+                            <a href="https://pitfund.com/investors" class="btn" data-i18n="investor_info">Investor Information</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about" id="about">
+            <div class="container">
+                <h2 class="section-title" data-i18n="about_me">About Me</h2>
+                <div class="about-container">
+                    <div class="about-img">
+                        <img src="placeholder.jpg" data-src="profile-picture.jpg" alt="F.K. Albert - Entrepreneur" loading="lazy" class="lazy">
+                    </div>
+                    <div class="about-content">
+                        <h2 data-i18n="about_title">Founder of Impact Driven Businesses</h2>
+                        <p data-i18n="i_am_1">I am a visionary entrepreneur committed to creating platforms that transform lives through financial education, Gospel truth, and strategic investments.</p>
+                        <p data-i18n="i_am_2">With ventures spanning financial literacy, biblical teaching, investment management, and cross-sector business development, my mission is to empower individuals and communities to achieve both financial freedom and spiritual growth.</p>
+                        <p data-i18n="i_am_3">Through FinMastery, I help people break free from poverty mindsets. With The Gospel Truths, I spread sound biblical teaching. Through Ads Bego, PERUS Group, and PIT Fund, I create opportunities for wealth creation and economic development.</p>
+                        <div class="about-quote">
+                            <p data-i18n="i_am_4">"Raising Kingdom leaders through financial mastery and Gospel truth."</p>
+                            <p>F.K. Albert</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connect Section -->
+        <section class="section connect" id="connect">
+            <div class="container">
+                <h2 class="section-title" data-i18n="connect_title">Connect With Me</h2>
+                <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;" data-i18n="connect_sub">Whether you're an investor, collaborator, student, or fellow visionary, I'd love to connect with you across platforms where impact begins.</p>
+                
+                <div class="connect-grid">
+                    <!-- Facebook -->
+                    <div class="connect-card">
+                        <div class="connect-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <h3>Facebook</h3>
+                        <p data-i18n="facebook_desc">Inspire, lead, and build communities with purpose.</p>
+                        <a href="https://facebook.com/fkalbert" target="_blank" class="btn" data-i18n="facebook_connect">Connect</a>
+                    </div>
+                    
+                    <!-- WhatsApp -->
+                    <div class="connect-card">
+                        <div class="connect-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>WhatsApp Business</h3>
+                        <p data-i18n="whatsapp_desc">Message directly for consultations, partnerships, or business inquiries.</p>
+                        <a href="https://wa.me/233202572216" target="_blank" class="btn" data-i18n="message">Message</a>
+                    </div>
+                    
+                    <!-- LinkedIn -->
+                    <div class="connect-card">
+                        <div class="connect-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <p data-i18n="linkedin_desc">For professional networking, investor relations, and leadership content.</p>
+                        <a href="https://www.linkedin.com/in/fkalbert" target="_blank" class="btn" data-i18n="linkedin_connect">Connect</a>
+                    </div>
+                    
+                    <!-- Instagram -->
+                    <div class="connect-card">
+                        <div class="connect-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h3>Instagram</h3>
+                        <p data-i18n="instagram_desc">Follow my journey through visuals, stories, and Kingdom business insights.</p>
+                        <a href="https://instagram.com/f.k.albert" target="_blank" class="btn" data-i18n="follow">Follow</a>
+                    </div>
+                    
+                    <!-- Twitter -->
+                    <div class="connect-card">
+                        <div class="connect-icon">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <h3>Twitter (X)</h3>
+                        <p data-i18n="twitter_desc">Daily financial wisdom, Gospel truths, and leadership thoughts.</p>
+                        <a href="https://twitter.com/fkalbert" target="_blank" class="btn" data-i18n="follow">Follow</a>
+                    </div>
+                    
+                    <!-- YouTube -->
+                    <div class="connect-card">
+                        <div class="connect-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h3>YouTube</h3>
+                        <p data-i18n="youtube_desc">Video teachings on financial literacy, entrepreneurship, and Kingdom principles.</p>
+                        <a href="https://youtube.com/@FinMastery" target="_blank" class="btn" data-i18n="subscribe">Subscribe</a>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="connect-card">
+                        <div class="connect-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p data-i18n="email_desc">For media inquiries, speaking engagements, and partnerships.</p>
+                        <a href="mailto:F.K.Albert@outlook.com" class="btn" data-i18n="email_me">Email Me</a>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="connect-card">
+                        <div class="connect-icon">
+                            <i class="fas fa-comment-alt"></i>
+                        </div>
+                        <h3 data-i18n="contact_form">Contact Form</h3>
+                        <p data-i18n="contact_form_desc">Send me a message directly through this website.</p>
+                        <a href="#contact-form" class="btn" data-i18n="send_message">Send Message</a>
+                    </div>
+                </div>
+                
+                <!-- Contact Form Section -->
+                <div id="contact-form" class="contact-form">
+                    <div id="form-success" class="form-success" style="display: none;">
+                        <i class="fas fa-check-circle" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                        <h3 data-i18n="form_success_title">Message Sent Successfully!</h3>
+                        <p data-i18n="form_success_message">Thank you for your message. I'll get back to you soon.</p>
+                    </div>
+                    
+                    <h3 style="text-align: center; margin-bottom: 30px;" data-i18n="contact_form_title">Send Me a Message</h3>
+                    <form id="messageForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-group">
+                            <label for="name" data-i18n="form_name">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                            <div class="error-message" data-i18n="form_name_error">Please enter your name</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-i18n="form_email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
+                            <div class="error-message" data-i18n="form_email_error">Please enter a valid email address</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" data-i18n="form_subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                            <div class="error-message" data-i18n="form_subject_error">Please enter a subject</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-i18n="form_message">Message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                            <div class="error-message" data-i18n="form_message_error">Please enter your message</div>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;" data-i18n="form_submit">
+                            <span id="submit-text">Send Message</span>
+                            <span id="submit-spinner" style="display: none;"><i class="fas fa-spinner fa-spin"></i></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>F.K. Albert</h3>
+                    <p data-i18n="details">Impact-driven entrepreneur building platforms that transform lives through financial education, Gospel truth, and strategic investments.</p>
+                    <p data-i18n="details_quote">"Raising Kingdom leaders through financial mastery and Gospel truth."</p>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="quick_links">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home" data-i18n="home">Home</a></li>
+                        <li><a href="#ventures" data-i18n="ventures">Ventures</a></li>
+                        <li><a href="#about" data-i18n="about">About</a></li>
+                        <li><a href="#connect" data-i18n="connect">Connect</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="contact_info">Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> F.K.Albert@outlook.com</p>
+                    <p><i class="fab fa-whatsapp"></i> +233 20 257 2216</p>
+                    <div class="social-links" style="margin-top: 20px;">
+                        <a href="https://www.facebook.com/fkalbert" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/fkalbert" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/f.k.albert" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/fkalbert" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://youtube.com/@fkalbert" target="_blank" style="color: white; font-size: 1.2rem;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> F.K. Albert. <span data-i18n="all_rights">All Rights Reserved</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if(this.getAttribute('href') === '#') return;
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if(mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+        
+        // Sticky Header on Scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+        
+        // Highlight active section in navigation
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav ul li a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 80) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Add active class to the current section link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelectorAll('nav ul li a').forEach(item => item.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Translation dictionary
+        const translations = {
+            en: {
+                "welcome": "Impact Driven Serial Entrepreneur",
+                "welcome_sub": "Founder of platforms transforming lives through financial education, Gospel truth, and strategic investments across multiple industries.",
+                "explore_ventures": "Explore My Ventures",
+                "connect_with_me": "Connect With Me",
+                "my_ventures": "My Ventures",
+                "founder": "Founder",
+                "finmastery_desc": "Financial literacy school dedicated to empowering individuals with practical money education and strategies for wealth creation.",
+                "gospeltruths_desc": "Digital platform that teaches the foundational truths of the Gospel of Christ to inspire spiritual growth and biblical understanding.",
+                "adsbego_desc": "Investment-focused platform that mobilizes capital for high-impact ventures, empowering individuals to grow their wealth.",
+                "perus_desc": "Cross-sector holding company driving innovation in real estate, agriculture, logistics, tech, and finance across Ghana and Spain.",
+                "pitfund_desc": "Private investment trust that raises capital for curated, profitable ventures offering equity opportunities to strategic partners.",
+                "venture_desc": "Impact-driven entrepreneur building platforms that transform lives through financial education, Gospel truth, and strategic investments.",
+                "visit_platform": "Visit Platform",
+                "explore_teachings": "Explore Teachings",
+                "learn_investments": "Learn About Investments",
+                "discover_perus": "Discover Perus",
+                "investor_info": "Investor Information",
+                "about_me": "About Me",
+                "about_title": "Founder of Impact Driven Businesses",
+                "i_am_1": "I am a visionary entrepreneur committed to creating platforms that transform lives through financial education, Gospel truth, and strategic investments.",
+                "i_am_2": "With ventures spanning financial literacy, biblical teaching, investment management, and cross-sector business development, my mission is to empower individuals and communities to achieve both financial freedom and spiritual growth.",
+                "i_am_3": "Through FinMastery, I help people break free from poverty mindsets. With The Gospel Truths, I spread sound biblical teaching. Through Ads Bego, PERUS Group, and PIT Fund, I create opportunities for wealth creation and economic development.",
+                "i_am_4": "\"Raising Kingdom leaders through financial mastery and Gospel truth.\"",
+                "connect_title": "Connect With Me",
+                "connect_sub": "Whether you're an investor, collaborator, student, or fellow visionary, I'd love to connect with you across platforms where impact begins.",
+                "linkedin_connect": "Connect",
+                "facebook_connect": "Connect",
+                "message": "Message",
+                "facebook_desc": "Inspire, lead, and build communities with purpose.",
+                "whatsapp_desc": "Message directly for consultations, partnerships, or business inquiries.",
+                "linkedin_desc": "For professional networking, investor relations, and leadership content.",
+                "instagram_desc": "Follow my journey through visuals, stories, and Kingdom business insights.",
+                "twitter_desc": "Daily financial wisdom, Gospel truths, and leadership thoughts.",
+                "youtube_desc": "Video teachings on financial literacy, entrepreneurship, and Kingdom principles.",
+                "follow": "Follow",
+                "subscribe": "Subscribe",
+                "email_me": "Email Me",
+                "email_desc": "For media inquiries, speaking engagements, and partnerships.",
+                "contact_form": "Contact Form",
+                "contact_form_desc": "Send me a message directly through this website.",
+                "send_message": "Send Message",
+                "contact_form_title": "Send Me a Message",
+                "form_name": "Your Name",
+                "form_email": "Email Address",
+                "form_subject": "Subject",
+                "form_message": "Message",
+                "form_submit": "Send Message",
+                "form_success_title": "Message Sent Successfully!",
+                "form_success_message": "Thank you for your message. I'll get back to you soon.",
+                "form_name_error": "Please enter your name",
+                "form_email_error": "Please enter a valid email address",
+                "form_subject_error": "Please enter a subject",
+                "form_message_error": "Please enter your message",
+                "quick_links": "Quick Links",
+                "contact_info": "Contact Info",
+                "details": "Impact-driven entrepreneur building platforms that transform lives through financial education, Gospel truth, and strategic investments.",
+                "details_quote": "\"Raising Kingdom leaders through financial mastery and Gospel truth.\"",
+                "home": "Home",
+                "ventures": "Ventures",
+                "about": "About",
+                "connect": "Connect",
+                "all_rights": "All Rights Reserved"
+            },
+            es: {
+                "welcome": "Empresario en Serie Impulsado por el Impacto",
+                "welcome_sub": "Fundador de plataformas que transforman vidas a través de la educación financiera, la verdad del Evangelio y las inversiones estratégicas en múltiples industrias.",
+                "explore_ventures": "Explora Mis Emprendimientos",
+                "connect_with_me": "Conéctate Conmigo",
+                "my_ventures": "Mis Emprendimientos",
+                "founder": "Fundador",
+                "finmastery_desc": "Escuela de alfabetización financiera dedicada a empoderar a las personas con educación práctica sobre el dinero y estrategias para la creación de riqueza.",
+                "gospeltruths_desc": "Plataforma digital que enseña las verdades fundamentales del Evangelio de Cristo para inspirar el crecimiento espiritual y la comprensión bíblica.",
+                "adsbego_desc": "Plataforma enfocada en inversiones que moviliza capital para emprendimientos de alto impacto, empoderando a las personas para hacer crecer su riqueza.",
+                "perus_desc": "Holding multisectorial que impulsa la innovación en bienes raíces, agricultura, logística, tecnología y finanzas en Ghana y España.",
+                "pitfund_desc": "Fideicomiso de inversión privada que recauda capital para emprendimientos seleccionados y rentables, ofreciendo oportunidades de capital a socios estratégicos.",
+                "venture_desc": "Emprendedor impulsado por el impacto, construyendo plataformas que transforman vidas a través de la educación financiera, la verdad del Evangelio y las inversiones estratégicas.",
+                "visit_platform": "Visitar Plataforma",
+                "explore_teachings": "Explorar Enseñanzas",
+                "learn_investments": "Aprende Sobre Inversiones",
+                "discover_perus": "Descubre Perus",
+                "investor_info": "Información para Inversores",
+                "about_me": "Sobre Mí",
+                "about_title": "Fundador de Negocios Impulsados por el Impacto",
+                "i_am_1": "Soy un emprendedor visionario comprometido a crear plataformas que transforman vidas a través de la educación financiera, la verdad del Evangelio y las inversiones estratégicas.",
+                "i_am_2": "Con emprendimientos que abarcan alfabetización financiera, enseñanza bíblica, gestión de inversiones y desarrollo empresarial multisectorial, mi misión es empoderar a individuos y comunidades para lograr libertad financiera y crecimiento espiritual.",
+                "i_am_3": "A través de FinMastery, ayudo a las personas a liberarse de la mentalidad de pobreza. Con The Gospel Truths, difundo enseñanzas bíblicas sólidas. A través de Ads Bego, PERUS Group y PIT Fund, creo oportunidades para la creación de riqueza y el desarrollo económico.",
+                "i_am_4": "\"Formando líderes del Reino a través del dominio financiero y la verdad del Evangelio.\"",
+                "connect_title": "Conéctate Conmigo",
+                "connect_sub": "Ya sea que seas un inversionista, colaborador, estudiante o un visionario, me encantaría conectarme contigo en las plataformas donde comienza el impacto.",
+                "linkedin_connect": "Conectar",
+                "facebook_connect": "Conectar",
+                "message": "Mensaje",
+                "facebook_desc": "Inspira, lidera y construye comunidades con propósito.",
+                "whatsapp_desc": "Mensaje directamente para consultas, asociaciones o consultas comerciales.",
+                "linkedin_desc": "Para networking profesional, relaciones con inversores y contenido de liderazgo.",
+                "instagram_desc": "Sigue mi viaje a través de imágenes, historias y conocimientos de negocios del Reino.",
+                "twitter_desc": "Sabiduría financiera diaria, verdades del Evangelio y pensamientos de liderazgo.",
+                "youtube_desc": "Enseñanzas en video sobre educación financiera, emprendimiento y principios del Reino.",
+                "follow": "Seguir",
+                "subscribe": "Suscribirse",
+                "email_me": "Envíame un correo",
+                "email_desc": "Para consultas de prensa, conferencias y asociaciones.",
+                "contact_form": "Formulario de Contacto",
+                "contact_form_desc": "Envíame un mensaje directamente a través de este sitio web.",
+                "send_message": "Enviar Mensaje",
+                "contact_form_title": "Envíame un Mensaje",
+                "form_name": "Tu Nombre",
+                "form_email": "Correo Electrónico",
+                "form_subject": "Asunto",
+                "form_message": "Mensaje",
+                "form_submit": "Enviar Mensaje",
+                "form_success_title": "¡Mensaje Enviado Exitosamente!",
+                "form_success_message": "Gracias por tu mensaje. Me pondré en contacto contigo pronto.",
+                "form_name_error": "Por favor ingresa tu nombre",
+                "form_email_error": "Por favor ingresa un correo electrónico válido",
+                "form_subject_error": "Por favor ingresa un asunto",
+                "form_message_error": "Por favor ingresa tu mensaje",
+                "quick_links": "Enlaces Rápidos",
+                "contact_info": "Información de Contacto",
+                "details": "Emprendedor impulsado por el impacto, construyendo plataformas que transforman vidas a través de la educación financiera, la verdad del Evangelio y las inversiones estratégicas.",
+                "details_quote": "\"Formando líderes del Reino a través del dominio financiero y la verdad del Evangelio.\"",
+                "home": "Inicio",
+                "ventures": "Emprendimientos",
+                "about": "Sobre Mí",
+                "connect": "Conectar",
+                "all_rights": "Todos los Derechos Reservados"
+            },
+            fr: {
+                "welcome": "Entrepreneur en Série Axé sur l'Impact",
+                "welcome_sub": "Fondateur de plateformes transformant des vies grâce à l'éducation financière, la vérité de l'Évangile et des investissements stratégiques dans multiples industries.",
+                "explore_ventures": "Explorer Mes Entreprises",
+                "connect_with_me": "Me Contacter",
+                "my_ventures": "Mes Entreprises",
+                "founder": "Fondateur",
+                "finmastery_desc": "École d'alphabétisation financière dédiée à autonomiser les individus avec une éducation pratique sur l'argent et des stratégies pour créer de la richesse.",
+                "gospeltruths_desc": "Plateforme numérique enseignant les vérités fondamentales de l'Évangile du Christ pour inspirer la croissance spirituelle et la compréhension biblique.",
+                "adsbego_desc": "Plateforme axée sur les investissements mobilisant des capitaux pour des entreprises à fort impact, permettant aux individus de développer leur richesse.",
+                "perus_desc": "Société holding multisectorielle stimulant l'innovation dans l'immobilier, l'agriculture, la logística, la technologie et la finance au Ghana et en Espagne.",
+                "pitfund_desc": "Fonds d'investissement privé levant des capitaux pour des entreprises sélectionnées et rentables, offrant des opportunités de participation à des partenaires stratégiques.",
+                "venture_desc": "Entrepreneur axé sur l'impact, construisant des plateformes qui transforment des vies grâce à l'éducation financière, la vérité de l'Évangile et des investissements stratégiques.",
+                "visit_platform": "Visiter la Plateforme",
+                "explore_teachings": "Explorer les Enseignements",
+                "learn_investments": "Apprendre sur les Investissements",
+                "discover_perus": "Découvrir Perus",
+                "investor_info": "Informations pour Investisseurs",
+                "about_me": "À Propos de Moi",
+                "about_title": "Fondateur d'Entreprises Axées sur l'Impact",
+                "i_am_1": "Je suis un entrepreneur visionnaire engagé à créer des plateformes qui transforment des vies grâce à l'éducation financière, la vérité de l'Évangile et des investissements stratégiques.",
+                "i_am_2": "Avec des entreprises couvrant l'alphabétisation financière, l'enseignement biblique, la gestion d'investissements et le développement commercial multisectoriel, ma mission est d'autonomiser les individus et les communautés pour atteindre la liberté financière et la croissance spirituelle.",
+                "i_am_3": "À travers FinMastery, j'aide les gens à se libérer des mentalités de pauvreté. Avec The Gospel Truths, je diffuse un enseignement biblique solide. À travers Ads Bego, PERUS Group et PIT Fund, je crée des opportunités de création de richesse et de développement économique.",
+                "i_am_4": "\"Élever des leaders du Royaume à travers la maîtrise financière et la vérité de l'Évangile.\"",
+                "connect_title": "Me Contacter",
+                "connect_sub": "Que vous soyez un investisseur, collaborateur, étudiant ou autre visionnaire, j'aimerais vous rencontrer sur les plateformes où l'impact commence.",
+                "linkedin_connect": "Se Connecter",
+                "facebook_connect": "Se Connecter",
+                "message": "Message",
+                "facebook_desc": "Inspirer, diriger et construire des communautés avec un but.",
+                "whatsapp_desc": "Message direct pour consultations, partenariats ou demandes commerciales.",
+                "linkedin_desc": "Pour le réseautage professionnel, les relations avec les investisseurs et le contenu de leadership.",
+                "instagram_desc": "Suivez mon parcours à travers des visuels, des histoires et des idées d'affaires du Royaume.",
+                "twitter_desc": "Sagesse financière quotidienne, vérités de l'Évangile et pensées sur le leadership.",
+                "youtube_desc": "Enseignements vidéo sur l'éducation financière, l'entrepreneuriat et les principes du Royaume.",
+                "follow": "Suivre",
+                "subscribe": "S'abonner",
+                "email_me": "M'Envoyer un Email",
+                "email_desc": "Pour les demandes des médias, les conférences et les partenariats.",
+                "contact_form": "Formulaire de Contact",
+                "contact_form_desc": "Envoyez-moi un message directement via ce site web.",
+                "send_message": "Envoyer un Message",
+                "contact_form_title": "Envoyez-moi un Message",
+                "form_name": "Votre Nom",
+                "form_email": "Adresse Email",
+                "form_subject": "Sujet",
+                "form_message": "Message",
+                "form_submit": "Envoyer le Message",
+                "form_success_title": "Message Envoyé avec Succès!",
+                "form_success_message": "Merci pour votre message. Je vous répondrai bientôt.",
+                "form_name_error": "Veuillez entrer votre nom",
+                "form_email_error": "Veuillez entrer une adresse email valide",
+                "form_subject_error": "Veuillez entrer un sujet",
+                "form_message_error": "Veuillez entrer votre message",
+                "quick_links": "Liens Rapides",
+                "contact_info": "Informations de Contact",
+                "details": "Entrepreneur axé sur l'impact, construisant des plateformes qui transforment des vies grâce à l'éducation financière, la vérité de l'Évangile et des investissements stratégiques.",
+                "details_quote": "\"Élever des leaders du Royaume à travers la maîtrise financière et la vérité de l'Évangile.\"",
+                "home": "Accueil",
+                "ventures": "Entreprises",
+                "about": "À Propos",
+                "connect": "Contact",
+                "all_rights": "Tous Droits Réservés"
+            },
+            de: {
+                "welcome": "Wirkungsorientierter Serienunternehmer",
+                "welcome_sub": "Gründer von Plattformen, die Leben durch finanzielle Bildung, biblische Wahrheit und strategische Investitionen in verschiedenen Branchen verändern.",
+                "explore_ventures": "Meine Unternehmen erkunden",
+                "connect_with_me": "Mit mir in Kontakt treten",
+                "my_ventures": "Meine Unternehmen",
+                "founder": "Gründer",
+                "finmastery_desc": "Schule für finanzielle Bildung, die Menschen mit praktischem Finanzwissen und Strategien zur Vermögensbildung befähigt.",
+                "gospeltruths_desc": "Digitale Plattform, die die grundlegenden Wahrheiten des Evangeliums von Christus lehrt, um spirituelles Wachstum und biblisches Verständnis zu fördern.",
+                "adsbego_desc": "Investitionsplattform, die Kapital für wirkungsvolle Unternehmen mobilisiert und Menschen befähigt, ihr Vermögen zu vermehren.",
+                "perus_desc": "Branchenübergreifendes Holding-Unternehmen, das Innovationen in Immobilien, Landwirtschaft, Logistik, Technologie und Finanzen in Ghana und Spanien vorantreibt.",
+                "pitfund_desc": "Privater Investmentfonds, der Kapital für ausgewählte, profitable Unternehmen beschafft und strategischen Partnern Beteiligungsmöglichkeiten bietet.",
+                "venture_desc": "Wirkungsorientierter Unternehmer, der Plattformen aufbaut, die Leben durch finanzielle Bildung, biblische Wahrheit und strategische Investitionen verändern.",
+                "visit_platform": "Plattform besuchen",
+                "explore_teachings": "Lehren erkunden",
+                "learn_investments": "Über Investitionen lernen",
+                "discover_perus": "Perus entdecken",
+                "investor_info": "Informationen für Investoren",
+                "about_me": "Über mich",
+                "about_title": "Gründer von wirkungsorientierten Unternehmen",
+                "i_am_1": "Ich bin ein visionärer Unternehmer, der sich dem Aufbau von Plattformen verschrieben hat, die Leben durch finanzielle Bildung, biblische Wahrheit und strategische Investitionen verändern.",
+                "i_am_2": "Mit Unternehmen in den Bereichen finanzielle Bildung, biblische Lehre, Investitionsmanagement und branchenübergreifende Geschäftsentwicklung ist es meine Mission, Einzelpersonen und Gemeinschaften zu befähigen, sowohl finanzielle Freiheit als auch spirituelles Wachstum zu erreichen.",
+                "i_am_3": "Durch FinMastery helfe ich Menschen, sich von Armutsdenken zu befreien. Mit The Gospel Truths verbreite ich fundierte biblische Lehre. Durch Ads Bego, PERUS Group und PIT Fund schaffe ich Möglichkeiten zur Vermögensbildung und wirtschaftlichen Entwicklung.",
+                "i_am_4": "\"Führungskräfte für das Reich Gottes ausbilden durch finanzielle Meisterschaft und biblische Wahrheit.\"",
+                "connect_title": "Mit mir in Kontakt treten",
+                "connect_sub": "Egal, ob Sie Investor, Mitarbeiter, Student oder Mitvisionär sind - ich würde mich freuen, mit Ihnen auf Plattformen in Kontakt zu treten, wo Wirkung beginnt.",
+                "linkedin_connect": "Verbinden",
+                "facebook_connect": "Verbinden",
+                "message": "Nachricht",
+                "facebook_desc": "Inspirieren, führen und Gemeinschaften mit Ziel aufbauen.",
+                "whatsapp_desc": "Direkte Nachricht für Beratungen, Partnerschaften oder geschäftliche Anfragen.",
+                "linkedin_desc": "Für berufliches Networking, Investorenbeziehungen und Führungsinhalte.",
+                "instagram_desc": "Folgen Sie meiner Reise durch Bilder, Geschichten und Einblicke in das Reich-Gottes-Geschäft.",
+                "twitter_desc": "Tägliche finanzielle Weisheit, biblische Wahrheiten und Gedanken über Führung.",
+                "youtube_desc": "Videolehren über finanzielle Bildung, Unternehmertum und Prinzipien des Reichs Gottes.",
+                "follow": "Folgen",
+                "subscribe": "Abonnieren",
+                "email_me": "Email senden",
+                "email_desc": "Für Medienanfragen, Vorträge und Partnerschaften.",
+                "contact_form": "Kontaktformular",
+                "contact_form_desc": "Senden Sie mir direkt über diese Website eine Nachricht.",
+                "send_message": "Nachricht senden",
+                "contact_form_title": "Senden Sie mir eine Nachricht",
+                "form_name": "Ihr Name",
+                "form_email": "Email-Adresse",
+                "form_subject": "Betreff",
+                "form_message": "Nachricht",
+                "form_submit": "Nachricht senden",
+                "form_success_title": "Nachricht erfolgreich gesendet!",
+                "form_success_message": "Vielen Dank für Ihre Nachricht. Ich werde mich bald bei Ihnen melden.",
+                "form_name_error": "Bitte geben Sie Ihren Namen ein",
+                "form_email_error": "Bitte geben Sie eine gültige Email-Adresse ein",
+                "form_subject_error": "Bitte geben Sie einen Betreff ein",
+                "form_message_error": "Bitte geben Sie Ihre Nachricht ein",
+                "quick_links": "Schnelllinks",
+                "contact_info": "Kontaktinformationen",
+                "details": "Wirkungsorientierter Unternehmer, der Plattformen aufbaut, die Leben durch finanzielle Bildung, biblische Wahrheit und strategische Investitionen verändern.",
+                "details_quote": "\"Führungskräfte für das Reich Gottes ausbilden durch finanzielle Meisterschaft und biblische Wahrheit.\"",
+                "home": "Startseite",
+                "ventures": "Unternehmen",
+                "about": "Über mich",
+                "connect": "Kontakt",
+                "all_rights": "Alle Rechte vorbehalten"
+            },
+            pt: {
+                "welcome": "Empreendedor Serial Orientado para Impacto",
+                "welcome_sub": "Fundador de plataformas que transformam vidas através da educação financiera, verdade do Evangelho e investimentos estratégicos em múltiplas indústrias.",
+                "explore_ventures": "Explorar Meus Empreendimentos",
+                "connect_with_me": "Conectar Comigo",
+                "my_ventures": "Meus Empreendimentos",
+                "founder": "Fundador",
+                "finmastery_desc": "Escola de educação financiera dedicada a capacitar indivíduos com conhecimento prático sobre dinheiro e estratégias para criação de riqueza.",
+                "gospeltruths_desc": "Plataforma digital que ensina as verdades fundamentais do Evangelho de Cristo para inspirar crescimento espiritual e compreensão bíblica.",
+                "adsbego_desc": "Plataforma focada em investimentos que mobiliza capital para empreendimentos de alto impacto, capacitando indivíduos a crescerem sua riqueza.",
+                "perus_desc": "Holding multissetorial que impulsiona inovação em imóveis, agricultura, logística, tecnologia e finanças em Gana e Espanha.",
+                "pitfund_desc": "Fundo de investimento privado que capta capital para empreendimentos selecionados e lucrativos, oferecendo oportunidades de participação a parceiros estratégicos.",
+                "venture_desc": "Empreendedor orientado para impacto, construindo plataformas que transformam vidas através de educação financiera, verdade do Evangelho e investimentos estratégicos.",
+                "visit_platform": "Visitar Plataforma",
+                "explore_teachings": "Explorar Ensinamentos",
+                "learn_investments": "Aprender Sobre Investimentos",
+                "discover_perus": "Descobrir Perus",
+                "investor_info": "Informação para Investidores",
+                "about_me": "Sobre Mim",
+                "about_title": "Fundador de Negócios Orientados para Impacto",
+                "i_am_1": "Sou um empreendedor visionário comprometido em criar plataformas que transformam vidas através da educação financiera, verdade do Evangelho e investimentos estratégicos.",
+                "i_am_2": "Com empreendimentos abrangendo educação financiera, ensino bíblico, gestão de investimentos e desenvolvimento empresarial multissetorial, minha missão é capacitar indivíduos e comunidades a alcançarem liberdade financiera e crescimento espiritual.",
+                "i_am_3": "Através do FinMastery, ajudo pessoas a se libertarem de mentalidades de pobreza. Com The Gospel Truths, dissemino ensino bíblico sólido. Através do Ads Bego, PERUS Group e PIT Fund, crio oportunidades para geração de riqueza e desenvolvimento econômico.",
+                "i_am_4": "\"Formando líderes do Reino através do domínio financeiro e da verdade do Evangelho.\"",
+                "connect_title": "Conectar Comigo",
+                "connect_sub": "Seja você um investidor, colaborador, estudante ou outro visionário, adoraria me conectar com você nas plataformas onde o impacto começa.",
+                "linkedin_connect": "Conectar",
+                "facebook_connect": "Conectar",
+                "message": "Mensagem",
+                "facebook_desc": "Inspirar, liderar e construir comunidades com propósito.",
+                "whatsapp_desc": "Mensagem direta para consultas, parcerias ou perguntas comerciais.",
+                "linkedin_desc": "Para networking profissional, relações com investidores e conteúdo sobre liderança.",
+                "instagram_desc": "Acompanhe minha jornada através de imagens, histórias e insights sobre negócios do Reino.",
+                "twitter_desc": "Sabedoria financiera diária, verdades do Evangelho e pensamentos sobre liderança.",
+                "youtube_desc": "Ensino em vídeo sobre educação financiera, empreendedorismo e princípios do Reino.",
+                "follow": "Seguir",
+                "subscribe": "Assinar",
+                "email_me": "Me Enviar Email",
+                "email_desc": "Para perguntas da mídia, palestras e parcerias.",
+                "contact_form": "Formulário de Contato",
+                "contact_form_desc": "Envie-me uma mensagem diretamente através deste site.",
+                "send_message": "Enviar Mensagem",
+                "contact_form_title": "Envie-me uma Mensagem",
+                "form_name": "Seu Nome",
+                "form_email": "Endereço de Email",
+                "form_subject": "Assunto",
+                "form_message": "Mensagem",
+                "form_submit": "Enviar Mensagem",
+                "form_success_title": "Mensagem Enviada com Sucesso!",
+                "form_success_message": "Obrigado por sua mensagem. Entrarei em contato em breve.",
+                "form_name_error": "Por favor, insira seu nome",
+                "form_email_error": "Por favor, insira um endereço de email válido",
+                "form_subject_error": "Por favor, insira um assunto",
+                "form_message_error": "Por favor, insira sua mensagem",
+                "quick_links": "Links Rápidos",
+                "contact_info": "Informações de Contato",
+                "details": "Empreendedor orientado para impacto, construindo plataformas que transformam vidas através de educação financiera, verdade do Evangelho e investimentos estratégicos.",
+                "details_quote": "\"Formando líderes do Reino através do domínio financeiro e da verdade do Evangelho.\"",
+                "home": "Início",
+                "ventures": "Empreendimentos",
+                "about": "Sobre",
+                "connect": "Conectar",
+                "all_rights": "Todos os Direitos Reservados"
+            },
+            it: {
+                "welcome": "Imprenditore Seriale Guidato dall'Impatto",
+                "welcome_sub": "Fondatore di piattaforme che trasformano vite attraverso l'educazione finanziaria, la verità del Vangelo e investimenti strategici in molteplici settori.",
+                "explore_ventures": "Esplora le Mie Iniziative",
+                "connect_with_me": "Connettiti Con Me",
+                "my_ventures": "Le Mie Iniziative",
+                "founder": "Fondatore",
+                "finmastery_desc": "Scuola di educazione finanziaria dedicata a responsabilizzare gli individui con un'istruzione pratica sul denaro e strategie per la creazione di ricchezza.",
+                "gospeltruths_desc": "Piattaforma digitale che insegna le verità fondamentali del Vangelo di Cristo per ispirare la crescita spirituale e la comprensione biblica.",
+                "adsbego_desc": "Piattaforma focalizzata sugli investimenti che mobilita capitali per iniziative ad alto impatto, responsabilizzando gli individui a far crescere la loro ricchezza.",
+                "perus_desc": "Società holding multisettoriale che guida l'innovazione in immobiliare, agricoltura, logistica, tecnologia e finanza in Ghana e Spagna.",
+                "pitfund_desc": "Fondo di investimento privato che raccoglie capitali per iniziative selezionate e redditizie, offrendo opportunità di partecipazione a partner strategici.",
+                "venture_desc": "Imprenditore guidato dall'impatto, che costruisce piattaforme che trasformano vite attraverso l'educazione finanziaria, la verità del Vangelo e investimenti strategici.",
+                "visit_platform": "Visita la Piattaforma",
+                "explore_teachings": "Esplora gli Insegnamenti",
+                "learn_investments": "Scopri gli Investimenti",
+                "discover_perus": "Scopri Perus",
+                "investor_info": "Informazioni per Investitori",
+                "about_me": "Su di Me",
+                "about_title": "Fondatore di Aziende Guidate dall'Impatto",
+                "i_am_1": "Sono un imprenditore visionario impegnato a creare piattaforme che trasformano vite attraverso l'educazione finanziaria, la verità del Vangelo e investimenti strategici.",
+                "i_am_2": "Con iniziative che spaziano dall'educazione finanziaria, all'insegnamento biblico, alla gestione degli investimenti e allo sviluppo aziendale multisettoriale, la mia missione è responsabilizzare individui e comunità a raggiungere sia la libertà finanziaria che la crescita spirituale.",
+                "i_am_3": "Attraverso FinMastery, aiuto le persone a liberarsi dalle mentalità di povertà. Con The Gospel Truths, diffondo un solido insegnamento biblico. Attraverso Ads Bego, PERUS Group e PIT Fund, creo opportunità per la creazione di ricchezza e lo sviluppo economico.",
+                "i_am_4": "\"Formare leader del Regno attraverso la padronanza finanziaria e la verità del Vangelo.\"",
+                "connect_title": "Connettiti Con Me",
+                "connect_sub": "Che tu sia un investitore, collaboratore, studente o altro visionario, mi piacerebbe connettermi con te sulle piattaforme dove inizia l'impatto.",
+                "linkedin_connect": "Connetti",
+                "facebook_connect": "Connetti",
+                "message": "Messaggio",
+                "facebook_desc": "Ispira, guida e costruisci comunità con uno scopo.",
+                "whatsapp_desc": "Messaggia direttamente per consulenze, partnership o richieste commerciali.",
+                "linkedin_desc": "Per networking professionale, relazioni con investitori e contenuti di leadership.",
+                "instagram_desc": "Segui il mio percorso attraverso immagini, storie e approfondimenti sul business del Regno.",
+                "twitter_desc": "Saggezza finanziaria quotidiana, verità evangeliche e pensieri sulla leadership.",
+                "youtube_desc": "Insegnamenti video su educazione finanziaria, imprenditorialità e principi del Regno.",
+                "follow": "Segui",
+                "subscribe": "Iscriviti",
+                "email_me": "Mandami una Email",
+                "email_desc": "Per richieste dei media, discorsi e partnership.",
+                "contact_form": "Modulo di Contatto",
+                "contact_form_desc": "Inviami un messaggio direttamente attraverso questo sito.",
+                "send_message": "Invia Messaggio",
+                "contact_form_title": "Inviami un Messaggio",
+                "form_name": "Il Tuo Nome",
+                "form_email": "Indirizzo Email",
+                "form_subject": "Oggetto",
+                "form_message": "Messaggio",
+                "form_submit": "Invia Messaggio",
+                "form_success_title": "Messaggio Inviato con Successo!",
+                "form_success_message": "Grazie per il tuo messaggio. Ti risponderò presto.",
+                "form_name_error": "Per favore inserisci il tuo nome",
+                "form_email_error": "Per favore inserisci un indirizzo email valido",
+                "form_subject_error": "Per favore inserisci un oggetto",
+                "form_message_error": "Per favore inserisci il tuo messaggio",
+                "quick_links": "Link Rapidi",
+                "contact_info": "Informazioni di Contatto",
+                "details": "Imprenditore guidato dall'impatto, che costruisce piattaforme che trasformano vite attraverso l'educazione finanziaria, la verità del Vangelo e investimenti strategici.",
+                "details_quote": "\"Formare leader del Regno attraverso la padronanza finanziaria e la verità del Vangelo.\"",
+                "home": "Home",
+                "ventures": "Iniziative",
+                "about": "Su di Me",
+                "connect": "Connetti",
+                "all_rights": "Tutti i Diritti Riservati"
+            },
+            zh: {
+                "welcome": "影响力驱动的连续创业者",
+                "welcome_sub": "通过金融教育、福音真理和跨多个行业的战略投资改变生活的平台创始人。",
+                "explore_ventures": "探索我的事业",
+                "connect_with_me": "与我联系",
+                "my_ventures": "我的事业",
+                "founder": "创始人",
+                "finmastery_desc": "致力于通过实用的金钱教育和财富创造策略赋予个人能力的金融知识学校。",
+                "gospeltruths_desc": "数字平台，教导基督福音的基本真理，以激发灵性成长和圣经理解。",
+                "adsbego_desc": "以投资为重点的平台，为高影响力企业筹集资金，使个人能够增加财富。",
+                "perus_desc": "跨行业控股公司，推动加纳和西班牙在房地产、农业、物流、技术和金融领域的创新。",
+                "pitfund_desc": "私募投资基金，为精选的盈利企业筹集资金，为战略合作伙伴提供股权机会。",
+                "venture_desc": "影响力驱动的企业家，建立通过金融教育、福音真理和战略投资改变生活的平台。",
+                "visit_platform": "访问平台",
+                "explore_teachings": "探索教导",
+                "learn_investments": "了解投资",
+                "discover_perus": "发现Perus",
+                "investor_info": "投资者信息",
+                "about_me": "关于我",
+                "about_title": "影响力驱动企业的创始人",
+                "i_am_1": "我是一位有远见的企业家，致力于创建通过金融教育、福音真理和战略投资改变生活的平台。",
+                "i_am_2": "我的事业涵盖金融知识、圣经教导、投资管理和跨行业业务发展，我的使命是赋予个人和社区实现财务自由和灵性成长的能力。",
+                "i_am_3": "通过FinMastery，我帮助人们摆脱贫困思维。通过The Gospel Truths，我传播健全的圣经教导。通过Ads Bego、PERUS Group和PIT Fund，我创造财富创造和经济发展机会。",
+                "i_am_4": "\"通过金融精通和福音真理培养天国领袖。\"",
+                "connect_title": "与我联系",
+                "connect_sub": "无论您是投资者、合作者、学生还是有远见的人，我都希望与您在影响力开始的平台上建立联系。",
+                "linkedin_connect": "连接",
+                "facebook_connect": "连接",
+                "message": "消息",
+                "facebook_desc": "有目的地激励、领导和建立社区。",
+                "whatsapp_desc": "直接发送消息进行咨询、合作或业务查询。",
+                "linkedin_desc": "用于专业社交、投资者关系和管理内容。",
+                "instagram_desc": "通过视觉、故事和天国商业见解关注我的旅程。",
+                "twitter_desc": "每日金融智慧、福音真理和领导力思考。",
+                "youtube_desc": "关于金融知识、创业和天国原则的视频教学。",
+                "follow": "关注",
+                "subscribe": "订阅",
+                "email_me": "给我发邮件",
+                "email_desc": "用于媒体查询、演讲邀约和合作。",
+                "contact_form": "联系表单",
+                "contact_form_desc": "通过本网站直接给我发送消息。",
+                "send_message": "发送消息",
+                "contact_form_title": "给我发送消息",
+                "form_name": "您的姓名",
+                "form_email": "电子邮件地址",
+                "form_subject": "主题",
+                "form_message": "消息",
+                "form_submit": "发送消息",
+                "form_success_title": "消息发送成功!",
+                "form_success_message": "感谢您的留言。我会尽快回复您。",
+                "form_name_error": "请输入您的姓名",
+                "form_email_error": "请输入有效的电子邮件地址",
+                "form_subject_error": "请输入主题",
+                "form_message_error": "请输入您的消息",
+                "quick_links": "快速链接",
+                "contact_info": "联系信息",
+                "details": "影响力驱动的企业家，建立通过金融教育、福音真理和战略投资改变生活的平台。",
+                "details_quote": "\"通过金融精通和福音真理培养天国领袖。\"",
+                "home": "首页",
+                "ventures": "事业",
+                "about": "关于",
+                "connect": "联系",
+                "all_rights": "版权所有"
+            },
+            ar: {
+                "welcome": "رجل أعمال متسلسل مدفوع بالتأثير",
+                "welcome_sub": "مؤسس منصات تحول الحياة من خلال التعليم المالي، حق الإنجيل، والاستثمارات الاستراتيجية عبر صناعات متعددة.",
+                "explore_ventures": "استكشف مشاريعي",
+                "connect_with_me": "تواصل معي",
+                "my_ventures": "مشاريعي",
+                "founder": "المؤسس",
+                "finmastery_desc": "مدرسة محو الأمية المالية المكرسة لتمكين الأفراد من التعليم المالي العملي واستراتيجيات خلق الثروة.",
+                "gospeltruths_desc": "منصة رقمية تعلم الحقائق الأساسية لإنجيل المسيح لإلهام النمو الروحي والفهم الكتابي.",
+                "adsbego_desc": "منصة تركز على الاستثمار تحشد رأس المال لمشاريع عالية التأثير، تمكين الأفراد من تنمية ثرواتهم.",
+                "perus_desc": "شركة قابضة متعددة القطاعات تقود الابتكار في العقارات والزراعة والخدمات اللوجستية والتكنولوجيا والتمويل في غانا وإسبانيا.",
+                "pitfund_desc": "صندوق استثمار خاص يجمع رأس المال لمشاريع مختارة مربحة، ويقدم فرص الأسهم لشركاء استراتيجيين.",
+                "venture_desc": "رجل أعمال مدفوع بالتأثير، يبني منصات تحول الحياة من خلال التعليم المالي، حق الإنجيل، والاستثمارات الاستراتيجية.",
+                "visit_platform": "زيارة المنصة",
+                "explore_teachings": "استكشف التعاليم",
+                "learn_investments": "تعلم عن الاستثمارات",
+                "discover_perus": "اكتشف بيروس",
+                "investor_info": "معلومات للمستثمرين",
+                "about_me": "عني",
+                "about_title": "مؤسس الشركات المدفوعة بالتأثير",
+                "i_am_1": "أنا رجل أعمال رؤوي ملتزم بإنشاء منصات تحول الحياة من خلال التعليم المالي، حق الإنجيل، والاستثمارات الاستراتيجية.",
+                "i_am_2": "مع مشاريع تمتد لمحو الأمية المالية، التعليم الكتابي، إدارة الاستثمار، وتطوير الأعمال متعددة القطاعات، مهمتي هي تمكين الأفراد والمجتمعات لتحقيق الحرية المالية والنمو الروحي.",
+                "i_am_3": "من خلال FinMastery، أساعد الناس على التحرر من عقلية الفقر. مع The Gospel Truths، أنشر التعليم الكتابي السليم. من خلال Ads Bego، PERUS Group، وPIT Fund، أخلق فرصًا لخلق الثروة والتنمية الاقتصادية.",
+                "i_am_4": "\"تربية قادة المملكة من خلال الإتقان المالي وحق الإنجيل.\"",
+                "connect_title": "تواصل معي",
+                "connect_sub": "سواء كنت مستثمرًا، متعاونًا، طالبًا، أو صاحب رؤية، يسعدني التواصل معك عبر المنصات حيث يبدأ التأثير.",
+                "linkedin_connect": "تواصل",
+                "facebook_connect": "تواصل",
+                "message": "رسالة",
+                "facebook_desc": "إلهام، قيادة، وبناء مجتمعات بهدف.",
+                "whatsapp_desc": "رسالة مباشرة للاستشارات، الشراكات، أو الاستفسارات التجارية.",
+                "linkedin_desc": "للتواصل المهني، علاقات المستثمرين، ومحتوى القيادة.",
+                "instagram_desc": "تابع رحلتي من خلال الصور، القصص، ورؤى أعمال المملكة.",
+                "twitter_desc": "حكمة مالية يومية، حقائق الإنجيل، وأفكار قيادية.",
+                "youtube_desc": "دروس فيديو عن محو الأمية المالية، ريادة الأعمال، ومبادئ المملكة.",
+                "follow": "تابع",
+                "subscribe": "اشترك",
+                "email_me": "راسلني",
+                "email_desc": "للاستفسارات الإعلامية، الخطابات، والشراكات.",
+                "contact_form": "نموذج الاتصال",
+                "contact_form_desc": "أرسل لي رسالة مباشرة من خلال هذا الموقع.",
+                "send_message": "إرسال رسالة",
+                "contact_form_title": "أرسل لي رسالة",
+                "form_name": "اسمك",
+                "form_email": "عنوان البريد الإلكتروني",
+                "form_subject": "الموضوع",
+                "form_message": "الرسالة",
+                "form_submit": "إرسال الرسالة",
+                "form_success_title": "تم إرسال الرسالة بنجاح!",
+                "form_success_message": "شكرًا لك على رسالتك. سأعود إليك قريبًا.",
+                "form_name_error": "الرجاء إدخال اسمك",
+                "form_email_error": "الرجاء إدخال عنوان بريد إلكتروني صالح",
+                "form_subject_error": "الرجاء إدخال موضوع",
+                "form_message_error": "الرجاء إدخال رسالتك",
+                "quick_links": "روابط سريعة",
+                "contact_info": "معلومات الاتصال",
+                "details": "رجل أعمال مدفوع بالتأثير، يبني منصات تحول الحياة من خلال التعليم المالي، حق الإنجيل، والاستثمارات الاستراتيجية.",
+                "details_quote": "\"تربية قادة المملكة من خلال الإتقان المالي وحق الإنجيل.\"",
+                "home": "الرئيسية",
+                "ventures": "المشاريع",
+                "about": "عني",
+                "connect": "تواصل",
+                "all_rights": "جميع الحقوق محفوظة"
+            }
+        };
+
+        // Set default language
+        let currentLang = localStorage.getItem('language') || 'en';
+        
+        // Function to change language
+        function changeLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                } else if (translations['en'][key]) {
+                    element.textContent = translations['en'][key]; // Fallback to English
+                }
+            });
+            
+            // Update active button
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+            
+            // Update html lang attribute
+            document.documentElement.lang = lang;
+            
+            // Update RTL/LTR direction
+            if (lang === 'ar') {
+                document.body.style.direction = 'rtl';
+            } else {
+                document.body.style.direction = 'ltr';
+            }
+        }
+        
+        // Initialize language
+        document.addEventListener('DOMContentLoaded', () => {
+            changeLanguage(currentLang);
+            
+            // Add click event to language buttons
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    changeLanguage(btn.getAttribute('data-lang'));
+                });
+            });
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Form validation and submission
+            const messageForm = document.getElementById('messageForm');
+            if (messageForm) {
+                messageForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Validate form
+                    let isValid = true;
+                    const formGroups = this.querySelectorAll('.form-group');
+                    
+                    formGroups.forEach(group => {
+                        const input = group.querySelector('.form-control');
+                        const errorMsg = group.querySelector('.error-message');
+                        
+                        if (!input.value.trim()) {
+                            group.classList.add('error');
+                            isValid = false;
+                        } else if (input.type === 'email' && !input.checkValidity()) {
+                            group.classList.add('error');
+                            isValid = false;
+                        } else {
+                            group.classList.remove('error');
+                        }
+                    });
+                    
+                    if (!isValid) return;
+                    
+                    // Show loading state
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const submitText = submitBtn.querySelector('#submit-text');
+                    const submitSpinner = submitBtn.querySelector('#submit-spinner');
+                    
+                    submitText.style.display = 'none';
+                    submitSpinner.style.display = 'inline-block';
+                    submitBtn.disabled = true;
+                    
+                    try {
+                        const response = await fetch(this.action, {
+                            method: this.method,
+                            body: new FormData(this),
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+                        
+                        if (response.ok) {
+                            // Show success message
+                            document.getElementById('form-success').style.display = 'block';
+                            this.style.display = 'none';
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    } catch (error) {
+                        alert(translations[currentLang]['form_submit_error'] || 'There was an error submitting your message. Please try again later.');
+                    } finally {
+                        submitText.style.display = 'inline-block';
+                        submitSpinner.style.display = 'none';
+                        submitBtn.disabled = false;
+                    }
+                });
+            }
+
+            // Show contact form when "Send Message" button is clicked
+            document.querySelectorAll('a[href="#contact-form"]').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const contactForm = document.getElementById('contact-form');
+                    if (contactForm) {
+                        contactForm.style.display = 'block';
+                        // Scroll to the form smoothly
+                        contactForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                });
+            });
+
+            // Lazy load images
+            if ('IntersectionObserver' in window) {
+                const lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove('lazy');
+                            lazyImage.classList.add('loaded');
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            }
+
+            // Only show header and language switcher when settled at the home section
+            function updateHeaderAndLangSwitcher() {
+                const header = document.querySelector('header');
+                const languageSwitcher = document.querySelector('.language-switcher');
+                const atTop = window.scrollY < 10;
+                const onHome = (window.location.hash === '' || window.location.hash === '#home');
+                
+                if (onHome && atTop) {
+                    header.style.transform = '';
+                    header.style.opacity = '';
+                    header.style.pointerEvents = '';
+                    languageSwitcher.classList.remove('hide');
+                } else {
+                    header.style.transform = 'translateY(-120%)';
+                    header.style.opacity = '0';
+                    header.style.pointerEvents = 'none';
+                    languageSwitcher.classList.add('hide');
+                }
+            }
+
+            // Run on load, scroll, and hash change
+            window.addEventListener('DOMContentLoaded', updateHeaderAndLangSwitcher);
+            window.addEventListener('hashchange', updateHeaderAndLangSwitcher);
+            window.addEventListener('scroll', updateHeaderAndLangSwitcher);
+        });
+    </script>
+</body>
+</html>
